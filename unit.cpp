@@ -5,6 +5,7 @@ Unit::Unit(int speed, int x, int y, /*std::string image_path,*/ QString name, Di
     this->_speed = speed;
     this->_x = x;
     this->_y = y;
+    this->_alive = true;
     this->_count_cell = 0;
     this->_direction = direction;
     if (name == "pacman")
@@ -34,8 +35,16 @@ int Unit::getY(){
     return _y;
 }
 
+int Unit::getReabilitationTime(){
+    return _reabilitation_time;
+}
+
 bool Unit::getTryDirection(){
     return _try_dir;
+}
+
+bool Unit::getAlive(){
+    return _alive;
 }
 
 Unit::Directions Unit::getDirection(){
@@ -70,8 +79,16 @@ void Unit::setY(int y){
     _y = y;
 }
 
+void Unit::setReabilitationTime(int time){
+    _reabilitation_time = time;
+}
+
 void Unit::setTryDirection(bool flag){
     _try_dir = flag;
+}
+
+void Unit::setAlive(bool flag){
+    _alive = flag;
 }
 
 void Unit::setDirection(Unit::Directions direction){

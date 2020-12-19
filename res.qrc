@@ -1,0 +1,27 @@
+<RCC>
+    <qresource prefix="/sounds"/>
+    <qresource prefix="/images">
+        <file>bot_1.png</file>
+        <file>bot_2.png</file>
+        <file>bot_3.png</file>
+        <file>bot_4.png</file>
+        <file>bot_dead.png</file>
+        <file>bot_fucked_1.png</file>
+        <file>bot_fucked_2.png</file>
+        <file>bot_pre_normal_1.png</file>
+        <file>bot_pre_normal_2.png</file>
+        <file>floor.png</file>
+        <file>pacman_down_1.png</file>
+        <file>pacman_down_2.png</file>
+        <file>pacman_left_1.png</file>
+        <file>pacman_left_2.png</file>
+        <file>pacman_power.png</file>
+        <file>pacman_right_1.png</file>
+        <file>pacman_right_2.png</file>
+        <file>pacman_sleep_1.png</file>
+        <file>pacman_sleep_2.png</file>
+        <file>pacman_up_1.png</file>
+        <file>pacman_up_2.png</file>
+        <file>wall.png</file>
+    </qresource>
+</RCC>

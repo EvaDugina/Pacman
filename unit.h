@@ -7,8 +7,8 @@ class Unit{
 
 public:
 
-    enum Directions{
-        left, up, right, down, sleep
+    enum Directions {
+        left, right, up, down, sleep
     };
 
     Unit(int speed, int x, int y, QString name, Directions direction = Directions::right);
@@ -18,7 +18,9 @@ public:
     int getCountCell();
     int getX();
     int getY();
+    int getReabilitationTime();
     bool getTryDirection();
+    bool getAlive();
     Directions getDirection();
     Directions getFutureDirection();
     Directions getLastDirection();
@@ -28,7 +30,9 @@ public:
     void setCountCell(int count_cell);
     void setX(int x);
     void setY(int y);
+    void setReabilitationTime(int time);
     void setTryDirection(bool flag);
+    void setAlive(bool flag);
     void setDirection(Directions direction);
     void setFutureDirection(Directions future_direction);
     void setLastDirection(Directions last_direction);
@@ -42,7 +46,9 @@ private:
     int _count_cell;
     bool _try_dir = false;
     int _x, _y;
-    QPixmap *IMAGE_UNIT = new QPixmap("C:\\Users\\user\\QtProjects\\Pacman\\Images\\pacman.png");
+    bool _alive;
+    int _reabilitation_time;
+    QPixmap *IMAGE_UNIT = new QPixmap("C:\\Users\\user\\QtProjects\\Pacman\\resources\\images\\pacman.png");
 
 };
 
