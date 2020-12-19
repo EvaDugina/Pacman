@@ -11,6 +11,7 @@
 #include <QTimer>
 #include <QTime>
 #include <QMediaPlayer>
+#include <fstream>
 
 namespace Ui {
     class Game;
@@ -56,6 +57,7 @@ private:
     QPixmap *IMAGE_WALL = new QPixmap(":/images/wall.png");
     QPixmap *IMAGE_PACMAN = new QPixmap(":/images/pacman_right_2.png");
     QPixmap *IMAGE_PACMAN_POWER = new QPixmap(":/images/pacman_power.png");
+
 
     QMediaPlayer *_sound = new QMediaPlayer();
 

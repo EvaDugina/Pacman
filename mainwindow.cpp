@@ -16,8 +16,6 @@ MainWindow::MainWindow(QWidget *parent) :
     button_begin->setStyleSheet("background-color: white;");
     connect(button_begin, SIGNAL(clicked()), this, SLOT(on_button_start_game_clicked()));
 
-    //button_begin->setGeometry(300, 300, 200, 60);
-
 }
 
 MainWindow::~MainWindow(){

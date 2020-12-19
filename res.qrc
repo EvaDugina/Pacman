@@ -24,4 +24,8 @@
         <file>pacman_up_2.png</file>
         <file>wall.png</file>
     </qresource>
+    <qresource prefix="/sources"/>
+    <qresource prefix="/">
+        <file>field.txt</file>
+    </qresource>
 </RCC>

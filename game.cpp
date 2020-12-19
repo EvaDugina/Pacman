@@ -1,10 +1,10 @@
-#include <fstream>
 #include <iostream>
 #include <QDebug>
 #include <QPainter>
 #include <QCoreApplication>
 #include <ctime>
 #include <QMessageBox>
+#include <QFile>
 
 #include "game.h"
 #include "ui_gamewindow.h"
@@ -97,7 +97,7 @@ void Game::timerEvent(QTimerEvent *e){
 
 void Game::initGame(){
     _inGame = true;
-    _lives = 1;
+    _lives = 3;
     _isGameOver = false;
     IMAGE_WALL->scaled(QSize (DOT_WIDTH, DOT_HEIGHT), Qt::KeepAspectRatio);
     IMAGE_PACMAN->scaled(QSize (DOT_WIDTH, DOT_HEIGHT), Qt::KeepAspectRatio);
@@ -411,24 +411,26 @@ void Game::move(Unit *unit){
 }
 
 void Game::reloadField(){
-    std::ifstream file_map("C:\\Users\\user\\QtProjects\\Pacman\\field.txt");
-    if (!file_map.is_open())
+    QFile file_map(":/field.txt");
+    if (!file_map.open(QIODevice::ReadOnly | QIODevice::Text))
         std::cout << "File could not be open!\n";
     else{
+        QTextStream in(&file_map);
         std::string buff;
         int i = 0;
         int g = 0;
-        while (getline(file_map, buff)){
-                    for (int j = 0; j < FIELD_WIDTH; ++j){
-                        _field[i][j] = buff[j];
-                        if (buff[j] == '-'){
-                            _points_wall.resize(g + 1);
-                            _points_wall[g].rx() = j * DOT_WIDTH;
-                            _points_wall[g].ry() = i * DOT_HEIGHT;
-                            ++g;
-                        }
-                    }
-                    ++i;
+        while (!in.atEnd()){
+            QString line = in.readLine();
+            for (int j = 0; j < FIELD_WIDTH; ++j){
+                _field[i][j] = line.toStdString().c_str()[j];
+                if (_field[i][j] == '-'){
+                    _points_wall.resize(g + 1);
+                    _points_wall[g].rx() = j * DOT_WIDTH;
+                    _points_wall[g].ry() = i * DOT_HEIGHT;
+                    ++g;
+                }
+            }
+            ++i;
         }
     }
     file_map.close();
