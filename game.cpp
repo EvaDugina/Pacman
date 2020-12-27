@@ -261,7 +261,7 @@ void Game::drawUnit(Unit *unit){
     else if(!unit->getAlive())
         path_image_unit = ":/images/bot_dead";
     else if (_pacman_power_beans){
-        path_image_unit = ":/images/bot_reabilitation_";
+        path_image_unit = ":/images/bot_fucked_";
         if (_chet_time % 2 == 0)
             path_image_unit += "1";
         else
