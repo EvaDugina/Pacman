@@ -6,7 +6,6 @@ Unit::Unit(int speed, int x, int y, /*std::string image_path,*/ QString name, Di
     this->_x = x;
     this->_y = y;
     this->_alive = true;
-    this->_count_cell = 0;
     this->_direction = direction;
     if (name == "pacman")
         this->_future_direction = direction;
@@ -23,10 +22,6 @@ int Unit::getSpeed(){
     return _speed;
 }
 
-int Unit::getCountCell(){
-    return _count_cell;
-}
-
 int Unit::getX(){
     return _x;
 }
@@ -37,10 +32,6 @@ int Unit::getY(){
 
 int Unit::getReabilitationTime(){
     return _reabilitation_time;
-}
-
-bool Unit::getTryDirection(){
-    return _try_dir;
 }
 
 bool Unit::getAlive(){
@@ -59,16 +50,8 @@ Unit::Directions Unit::getLastDirection(){
     return _last_direction;
 }
 
-QPixmap Unit::getImage(){
-    return *IMAGE_UNIT;
-}
-
 void Unit::setSpeed(int speed){
     _speed = speed;
-}
-
-void Unit::setCountCell(int count_cell){
-    _count_cell = count_cell;
 }
 
 void Unit::setX(int x){
@@ -81,10 +64,6 @@ void Unit::setY(int y){
 
 void Unit::setReabilitationTime(int time){
     _reabilitation_time = time;
-}
-
-void Unit::setTryDirection(bool flag){
-    _try_dir = flag;
 }
 
 void Unit::setAlive(bool flag){
@@ -101,8 +80,4 @@ void Unit::setFutureDirection(Unit::Directions future_direction){
 
 void Unit::setLastDirection(Unit::Directions last_direction){
     _last_direction = last_direction;
-}
-
-void Unit::setImage(QPixmap image){
-    *IMAGE_UNIT = image;
 }

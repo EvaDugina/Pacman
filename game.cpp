@@ -31,6 +31,7 @@ Game::~Game(){
     delete ui;
 }
 
+
 void Game::keyPressEvent(QKeyEvent *e){
     int key = e->key();
     switch (key){
@@ -94,6 +95,8 @@ void Game::timerEvent(QTimerEvent *e){
     else
         _chet_time = 0;
 }
+
+
 
 void Game::initGame(){
     _inGame = true;

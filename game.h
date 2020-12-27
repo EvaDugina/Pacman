@@ -63,8 +63,8 @@ private:
 
     bool _isGameOver;
     bool _inGame;
-    int _chet_time;
     bool _pacman_power_beans;
+    int _chet_time;
     int _end_pacman_power;
     int _time;
     int _lives;
